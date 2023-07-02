@@ -44,6 +44,17 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function getAnother() {
+    let answer=prompt("Do you wish another game (y=yes, n=no)?");
+    if (answer===("y")) {
+        alert("Good luck and have fun!");
+        game();
+    } else {
+        console.log("You choose not to play anymore.");
+        return
+    }
+}
+
 function game() {
     console.log("Welcome!");
     let scoreC=0;
@@ -53,6 +64,7 @@ function game() {
         const computerSelection=getComputerChoice();
         //console.log(computerSelection)
         console.log(playRound(playerSelection, computerSelection))
+        console.log("---------------------------")
         
         if (playRound(playerSelection, computerSelection)=="Computer wins!") {
             scoreC++;
@@ -70,6 +82,13 @@ function game() {
         console.log("P: "+scoreP+" vs. C: "+scoreC);
         console.log("Computer and Player have same score!")
     }
+    getAnother()
+    //let answer=prompt("Do you wish another game (y=yes, n=no)?");
+    //if (answer==="y") {
+    //    game();
+    //} else {
+    //    return
+    //}
 }
 
 game()
